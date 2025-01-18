@@ -23,7 +23,7 @@ This project consists of:
 While the application itself is simple, the goal is to demonstrate:
 1. **CI/CD Pipelines** with GitHub Actions. 
 2. **Containerisation** using Docker.  
-3. **Orchestration** with Kubernetes for a more advanced deployment approach.
+3. **Deployment** with Amazon ECS.
 
 ---
 
@@ -36,7 +36,7 @@ While the application itself is simple, the goal is to demonstrate:
 - **CI/CD**: GitHub Actions
 - **Containerisation**: Docker  
 - **Hosting**: AWS ECS
-- **Orchestration**: Kubernetes for advanced orchestration
+
 
 ---
 
@@ -47,8 +47,7 @@ While the application itself is simple, the goal is to demonstrate:
    Every push triggers a pipeline to build, test, and (optionally) push container images.
 3. **Containerised Deployment**  
    Both services run in Docker containers, facilitating easy scaling and portability.
-4. **Scalable Setup**  
-   Deploy to Kubernetes, showing how the app scales in a container orchestrator.
+
 
 ---
 
