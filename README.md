@@ -11,8 +11,6 @@ This repository showcases a minimal **Hello World** application (frontend + back
    - [Local Setup](#local-setup)  
 5. [CI/CD Workflow](#ci-cd-workflow)  
 6. [Deployment](#deployment)  
-7. [Contributing](#contributing)  
-8. [License](#license)
 
 ---
 
@@ -95,7 +93,7 @@ While the application itself is simple, the goal is to demonstrate:
 4. **Access the Application**
    Open your browser and navigate to `http://localhost:5173`. You should see the “Hello World” message displayed and the backend message fetched.
 
-## CI/CD Pipeline
+## CI/CD Workflow
 
 A sample GitHub Actions workflow file is included (e.g., .github/workflows/ci-cd.yml):
 
