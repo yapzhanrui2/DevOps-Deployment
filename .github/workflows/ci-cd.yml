@@ -1,0 +1,59 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install Frontend Dependencies
+      working-directory: ./hello-world
+      run: npm ci
+
+    - name: Install Backend Dependencies
+      working-directory: ./server
+      run: npm ci
+
+    - name: Run Frontend Tests
+      working-directory: ./hello-world
+      run: npm test
+
+    - name: Run Backend Tests
+      working-directory: ./server
+      run: npm test
+
+    - name: Login to GitHub Container Registry
+      if: success() && github.event_name != 'pull_request'
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and Push Docker Images
+      if: success() && github.event_name != 'pull_request'
+      run: |
+        # Build and push Frontend image
+        docker build -t ghcr.io/${{ github.repository_owner }}/hello-world-frontend:latest ./hello-world
+        docker push ghcr.io/${{ github.repository_owner }}/hello-world-frontend:latest
+        
+        # Build and push Backend image
+        docker build -t ghcr.io/${{ github.repository_owner }}/hello-world-backend:latest ./server
+        docker push ghcr.io/${{ github.repository_owner }}/hello-world-backend:latest 
