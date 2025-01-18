@@ -154,4 +154,9 @@ To build and run the container locally:
 cd hello-world
 docker build -t devops-frontend .
 docker run -p 5173:5173 devops-frontend
+
+Or to build both using docker compose
+```bash
+docker compose up --build
+```
 ```
