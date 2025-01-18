@@ -9,8 +9,9 @@ This repository showcases a minimal **Hello World** application (frontend + back
 4. [Getting Started](#getting-started)  
    - [Prerequisites](#prerequisites)  
    - [Local Setup](#local-setup)  
-5. [CI/CD Workflow](#cicd-workflow)
-6. [Deployment](#deployment)  
+5. [Testing](#testing)
+6. [CI/CD Workflow](#cicd-workflow)
+7. [Deployment](#deployment) 
 
 ---
 
@@ -29,6 +30,9 @@ While the application itself is simple, the goal is to demonstrate:
 ## Tech Stack
 - **Frontend**: React + Vite
 - **Backend**: Node.js/Express 
+- **Testing**: 
+  - Frontend: Vitest + React Testing Library
+  - Backend: Jest + Supertest
 - **CI/CD**: GitHub Actions
 - **Containerisation**: Docker  
 - **Hosting**: AWS ECS
@@ -92,6 +96,34 @@ While the application itself is simple, the goal is to demonstrate:
 
 4. **Access the Application**
    Open your browser and navigate to `http://localhost:5173`. You should see the “Hello World” message displayed and the backend message fetched.
+
+## Testing
+
+### Frontend Tests
+The frontend uses Vitest and React Testing Library for component testing. Tests cover:
+- Component rendering
+- Loading states
+- API integration
+- Error handling
+
+To run frontend tests:
+```bash
+cd hello-world
+npm test
+```
+
+### Backend Tests
+The backend uses Jest and Supertest for API testing. Tests cover:
+- API endpoint responses
+- Status codes
+- Response formats
+- Error handling
+
+To run backend tests:
+```bash
+cd server
+npm test
+```
 
 ## CI/CD Workflow
 

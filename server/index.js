@@ -11,6 +11,12 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from server!' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-}); 
+// Only start the server if this file is run directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+// Export for testing
+module.exports = app; 
