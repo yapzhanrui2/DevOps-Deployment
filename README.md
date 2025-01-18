@@ -9,7 +9,7 @@ This repository showcases a minimal **Hello World** application (frontend + back
 4. [Getting Started](#getting-started)  
    - [Prerequisites](#prerequisites)  
    - [Local Setup](#local-setup)  
-5. [CI/CD Workflow](#ci-cd-workflow)  
+5. [CI/CD Workflow](#cicd-workflow)
 6. [Deployment](#deployment)  
 
 ---
