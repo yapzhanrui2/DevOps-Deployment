@@ -23,7 +23,6 @@ This project consists of:
 While the application itself is simple, the goal is to demonstrate:
 1. **CI/CD Pipelines** with GitHub Actions. 
 2. **Containerisation** using Docker.  
-3. **Deployment** with Amazon ECS.
 
 ---
 
@@ -35,7 +34,6 @@ While the application itself is simple, the goal is to demonstrate:
   - Backend: Jest + Supertest
 - **CI/CD**: GitHub Actions
 - **Containerisation**: Docker  
-- **Hosting**: AWS ECS
 
 
 ---
